@@ -143,14 +143,23 @@ if (number >= 2) {
 // colorTwo is set to 'red', and mix is set to true. We check if mix is true
 // -- it is, so we set colorOne and colorTwo to 'purple'
 
+//CODE
 /*
 let colorOne = 'red';
 let colorTwo = 'blue';
+// FIX
+// colorOne should be set to 'blue', not 'red', and vice versa for colorTwo.
+
 let mix = true;
 
+//CODE
 if (mix === true) {
   colorOne = 'purple';
 }
+//FIX
+// This is only setting colorOne to purple. There should be an additional line
+// of code within the conditional's brackets that says "colorTwo = 'purple'; "
+// which would set colorTwo to be purple as well.
 */
 
 //5. We start with two variables -- temp is set to 40 and time is set to 4.
@@ -158,11 +167,30 @@ if (mix === true) {
 // -- they are so we console.log 'throw away the food!'
 
 /*
+//CODE
 let temp = 40;
 const time = 4;
 
+//FIX
+// It would be better to use "let time=4" rather than "const time=4". This looks
+// like it's checking for time and temperature control for food safety, and presumably
+// the user would input values for both temp and time to see if the food needs to be
+// thrown away. Since, in that case, time would need to be adjustable later, "let"
+// would allow us more options for changing it later in our code, rather than just
+// altering the original variable. For this singular example, however, "const" would
+// work fine.
+
+//CODE
 if (temp > 39 || time >= 4) {
   console.log('throw away the food!');
+}
+
+//FIX
+// The compound conditional is using || which means "or", so this conditional is
+// checking whether either case of temp >39 or time >=4 is true. In this case, we
+// want to use && instead of ||, since we're trying to see whether both of the
+// conditions are true.
+
 }
 */
 
@@ -174,9 +202,26 @@ if (temp > 39 || time >= 4) {
 let age = 21;
 const minAge = 21;
 
+//CODE
 if(minAge <= age) {
   console.log('no entry');
 } else {
   console.log('enter');
 }
+
+//FIX
+// First, we should change "minAge <= age" to "age >= minAge" inside the conditional.
+// Both are functionally the same, but the question specifically mentions checking
+// whether age is greater than or equal to minAge, and the current conditional is
+// checking whether minAge is less than or equal to age.
+// From there, the condition "age >= minAge" is met, so the code inside the if bracket
+// logs 'no entry' to the console. We want the reverse to be true, so we should
+// switch the two lines of code inside the brackets so the if statement logs 'enter'
+// and the else statement logs 'no entry'. Alternately, we could change the conditional
+// to if(minAge > age) and keep the rest of the code the same, since with these
+// variables minAge isn't greater than age, so the existing else code would log
+// 'enter' for us, though the first option would be more in line with how the
+// question has been phrased, since we're checking to see if age is 21 or over,
+// rather than checking if age is 20 or less.
+
 */
